@@ -1,22 +1,33 @@
-# MaxWordCounter
+# アルゴリズムチャレンジ
 
-`MaxWordCounter` は、与えられた英文の中で最も頻繁に出現する単語を検出する Python プログラムです。制限時間30分以内に、この問題に対する効率的なアルゴリズムを設計・実装することが目標です。
+`MaxWordCounter.py` は、与えられた英文の中で最も頻繁に出現する単語を検出する、Pythonプログラムです。<br>
+制限時間30分以内に、この問題に対する効率的なアルゴリズムを設計・実装してください。
+
+## セットアップ
+
+1. 以下のコマンドでリポジトリをクローンしてください。
+
+```bash
+git clone https://github.com/yuijiro473/algorithm-challenge 
+```
+
+2. 以下の規則に従い、ブランチを作成してください。
+
+   ブランチ名：`{gitユーザー名}-algorithm-challenge`
 
 ## 問題
 
-与えられた文章中に出現する単語の頻度をカウントし、最も頻度の高い単語を返す関数を作成してください。文章は英語とし、すべての単語は小文字で、句読点や特殊文字は含まれていません。
+与えられた文章中に出現する単語の頻度をカウントし、最も頻度の高い単語を返す関数を作成してください。<br>
+対象の`MaxWordCounter.py`に詳しい記載があります。<br>
 
-以下にスケルトンコードを提供します。この関数を完成させてください。
+## 解答方法
+下記の関数に問題文の条件を満たすコードを記載してください。
 
 ```python
 def most_frequent_word(text):
     # ここにコードを書いてください
     pass
 ```
-
-## 注意点
-
-- 最も頻度の高い単語が複数存在する場合は、そのうちの任意の1つを返して構いません。
 
 ## テスト
 
@@ -27,9 +38,25 @@ def test_most_frequent_word():
     assert most_frequent_word("the quick brown fox jumps over the lazy dog") == "the"
     assert most_frequent_word("hello world world world") == "world"
     assert most_frequent_word("a") == "a"
+    assert most_frequent_word("this is a longer text with several words but only one word is repeated repeated") == "repeated"
+    assert most_frequent_word("repeated repeated repeated") == "repeated"
+    assert most_frequent_word("word") == "word"
+    assert most_frequent_word("several words but none are repeated") in ["several", "words", "but", "none", "are", "repeated"]
+    assert most_frequent_word("this this this that that") in ["this", "that"]
     print("課題クリア")
 
 test_most_frequent_word()
 ```
 
-すべてのテストをパスし、ターミナルに「課題クリア」の表示が出ればチャレンジクリアです。
+## 注意点
+
+- 文章は英語とし、すべての単語は小文字で、句読点や特殊文字は含まれていません。
+- 標準ライブラリの使用：可
+- 最も頻度の高い単語が複数存在する場合は、そのうちの任意の1つを返して構いません。
+
+## クリア条件
+
+『最も頻度の高い単語を返す』という条件を満たし、ターミナルに「課題クリア」の表示が出ればチャレンジクリアです。
+
+## 提出
+ターミナルに課題クリアが表示されたら、修正したファイルをブランチにプッシュします。
